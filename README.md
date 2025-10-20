@@ -21,17 +21,14 @@ your-project/
 
 ## Adding the JAR to Your Project
 
-### IntelliJ IDEA
-1. Right-click on the project → `Open Module Settings`.
-2. Go to `Libraries` → `+` → Select `libs/kellton_qa_framework-0.0.1-SNAPSHOT.jar`.
-3. The classes and methods will now be available for auto-suggestions in your code.
-
+OPTION-1
 ### Eclipse
 1. Right-click on the project → `Build Path` → `Add External JARs`.
 2. Select `libs/kellton_qa_framework-0.0.1-SNAPSHOT.jar`.
 3. The classes and methods will now be available in your project.
 
-### Maven (Optional)
+OPTION-2
+### Maven 
 If you want to use it as a Maven dependency locally:
 
 ```bash
@@ -42,17 +39,24 @@ mvn install:install-file \
   -Dversion=0.0.1-SNAPSHOT \
   -Dpackaging=jar
 
-  
+mvn install:install-file -Dfile=libs/kellton-qa-framework-0.0.1-SNAPSHOT.jar -DgroupId=[com.qa](http://com.qa/) -DartifactId=kellton-qa-framework -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
+
+mvn install:install-file -Dfile=libs/kellton-qa-framework-0.0.1-SNAPSHOT-sources.jar -DgroupId=[com.qa](http://com.qa/) -DartifactId=kellton-qa-framework -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -Dclassifier=sources
+
+mvn install:install-file -Dfile=libs/kellton-qa-framework-0.0.1-SNAPSHOT-javadoc.jar -DgroupId=[com.qa](http://com.qa/) -DartifactId=kellton-qa-framework -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -Dclassifier=javadoc
+
+ *replace target/kellton-qa-framework-0.0.1-SNAPSHOT with old project jar name
+
 Then add this dependency in pom.xml:
  <dependency>
   <groupId>com.qa</groupId>
-  <artifactId>qa-utils</artifactId>
+  <artifactId>kellton-qa-framework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 </dependency>
- Accessing Documentation
+
+Accessing Documentation
 
 Open docs/index.html in a browser to see a list of all BasePage utility methods with usage hints.
-
 Brief method descriptions are also available in Javadoc inside the classes for IDE auto-suggestion
 
 Quick Reference (Common Methods)
@@ -67,9 +71,7 @@ Quick Reference (Common Methods)
 For the full list of methods and detailed documentation, refer to docs/index.html.
 
 Notes
-
 Always pull the latest version of the repository to get updates to the JAR or documentation.
-
 If you add new utility methods, update both the JAR and index.html.
 
   
