@@ -1,20 +1,22 @@
 
 # QA Framework Utilities
 
-This repository contains the **QA framework JAR** (`kellton_qa_framework-0.0.1-SNAPSHOT.jar`) and its **documentation (`index.html`)** for Selenium/Java automation projects.
+This repository contains the **QA framework JAR** (`artifactId-version.jar`) and its **documentation (`index.html`)** for Selenium/Java automation projects.
 
 ---
 
 ## Folder Structure
 
+```plaintext
 your-project/
 ├─ src/ # Source code
 ├─ libs/ # External JARs
-│ └─ kellton_qa_framework-0.0.1-SNAPSHOT.jar
+│ └─ artifactId-version.jar
 ├─ docs/ # Documentation
 │ └─ index.html
 ├─ pom.xml or build.gradle # Build file (if Maven/Gradle)
 └─ README.md
+```
 
 
 ---
@@ -24,35 +26,31 @@ your-project/
 OPTION-1
 ### Eclipse
 1. Right-click on the project → `Build Path` → `Add External JARs`.
-2. Select `libs/kellton_qa_framework-0.0.1-SNAPSHOT.jar`.
+2. Select `libs/artifactId-version.jar`.
 3. The classes and methods will now be available in your project.
 
 OPTION-2
 ### Maven 
-If you want to use it as a Maven dependency locally:
+If you want to use it as a Maven dependency locally where POM.xml file is present:
 
 ```bash
-mvn install:install-file \
-  -Dfile=libs/kellton_qa_framework-0.0.1-SNAPSHOT.jar \
-  -DgroupId=com.qa \
-  -DartifactId=qa-utils \
-  -Dversion=0.0.1-SNAPSHOT \
-  -Dpackaging=jar
 
-mvn install:install-file -Dfile=libs/kellton-qa-framework-0.0.1-SNAPSHOT.jar -DgroupId=[com.qa](http://com.qa/) -DartifactId=kellton-qa-framework -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
+mvn install:install-file -Dfile=libs/artifactId-version.jar -DgroupId=com.qa -DartifactId=artifactId -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
 
-mvn install:install-file -Dfile=libs/kellton-qa-framework-0.0.1-SNAPSHOT-sources.jar -DgroupId=[com.qa](http://com.qa/) -DartifactId=kellton-qa-framework -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -Dclassifier=sources
+mvn install:install-file -Dfile=libs/artifactId-version-sources.jar -DgroupId=com.qa -DartifactId=artifactId -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -Dclassifier=sources
 
-mvn install:install-file -Dfile=libs/kellton-qa-framework-0.0.1-SNAPSHOT-javadoc.jar -DgroupId=[com.qa](http://com.qa/) -DartifactId=kellton-qa-framework -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -Dclassifier=javadoc
+mvn install:install-file -Dfile=libs/artifactId-version-javadoc.jar -DgroupId=com.qa -DartifactId=artifactId -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -Dclassifier=javadoc
+```
+ *replace libs/artifactId-version with old project jar name
 
- *replace target/kellton-qa-framework-0.0.1-SNAPSHOT with old project jar name
+
 
 Then add this dependency in pom.xml:
  <dependency>
-  <groupId>com.qa</groupId>
-  <artifactId>kellton-qa-framework</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-</dependency>
+   <groupId>com.qa</groupId>
+   <artifactId>artifactId</artifactId>
+   <version>version</version>
+ </dependency>
 
 Accessing Documentation
 
