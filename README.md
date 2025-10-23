@@ -46,17 +46,20 @@ mvn install:install-file -Dfile=libs/artifactId-version-javadoc.jar -DgroupId=co
 
 
 Then add this dependency in pom.xml:
+```bash
  <dependency>
    <groupId>com.qa</groupId>
    <artifactId>artifactId</artifactId>
    <version>version</version>
  </dependency>
-
+```
 Accessing Documentation
+
 
 Open docs/index.html in a browser to see a list of all BasePage utility methods with usage hints.
 Brief method descriptions are also available in Javadoc inside the classes for IDE auto-suggestion
 
+```bash
 Quick Reference (Common Methods)
 | Method                                                  | Description                                         |
 | ------------------------------------------------------- | --------------------------------------------------- |
@@ -65,7 +68,7 @@ Quick Reference (Common Methods)
 | `scrollToElement(WebElement element)`                   | Scrolls the page to the given element               |
 | `isElementVisible(WebElement element)`                  | Checks if an element is visible                     |
 | `selectDropdownByText(WebElement element, String text)` | Selects a dropdown option by visible text           |
-
+```
 For the full list of methods and detailed documentation, refer to docs/index.html.
 
 Notes
